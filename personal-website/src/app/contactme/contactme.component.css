@@ -1,0 +1,11 @@
+.contactme{
+    padding: 0 20%;
+    
+}
+.header{
+    text-align: center;
+    padding-bottom: 3%;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

@@ -11,6 +11,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactmeComponent } from './contactme/contactme.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { FrontendComponent } from './services/frontend/frontend.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FrontendComponent } from './services/frontend/frontend.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

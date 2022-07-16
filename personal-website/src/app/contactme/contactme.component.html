@@ -1,4 +1,68 @@
-<div style="background-color: green;margin-top:60px">
-    <p>contactme works!</p>
+<div class="header" style="margin-top:3%;">
+    <h2>Contact me</h2>
+    <p>Get in touch</p>
+</div>
 
+<div class="row contactme">
+    <div class="col-sm-5">
+        <div>
+            <h6><i class="fa fa-phone" style="color: #55acee;"></i> Contact me</h6>
+            <p>+91-9747683389</p>
+        </div>
+        <br>
+        <div>
+            <h6><i class="fa fa-envelope" style="color: #55acee;"></i> Email</h6>
+            <p>vibinchemmannoor@gmail.com</p>
+        </div>
+        <br>
+        <div>
+            <h6><i class="fa fa-map-marker" style="color: #55acee;"></i> Location</h6>
+            <p>Kakkanad, Cochin</p>
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="alert alert-success" role="alert" *ngIf="formSubmitted">
+            <h6 class="alert-heading">Hai.. {{userName}}</h6>
+            <p>Your enquiry is well received</p>
+        </div>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div id="userData">
+            <div class="form-group">
+                <input type="text" class="form-control"
+                placeholder="Name" 
+                name="name"
+                required
+                ngModel
+                #name="ngModel">
+            <span class="help-block" *ngIf="!name.valid && name.touched">Please enter your name!</span>
+
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control"
+                placeholder="Email" 
+                name="email"
+                email
+                required
+                ngModel
+                #email="ngModel">
+                <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+            </div>
+            
+            <div class="form-group">
+                <textarea name="message" id="" cols="60" rows="6"
+                placeholder="Message" 
+                class="form-control"
+                required
+                ngModel></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary"
+            [disabled]="!f.valid">
+            Send Message</button>
+
+        </div>
+        </form>
+        
+        
+    </div>
 </div>
